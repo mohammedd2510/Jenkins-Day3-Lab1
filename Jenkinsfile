@@ -1,5 +1,9 @@
 pipeline {
-    agent { label 'docker' } // Specify the agent label
+  agent {
+    docker {
+      image 'mosama25/jenkins_day3_lab1:v3.0'
+      args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
+    }
     environment {
         DOCKER_IMAGE = 'mosama25/jenkins_day3_lab1:v4.0'
         DOCKER_LOGIN_CREDS = credentials('docker_credentials')// Replace with your Jenkins credentials ID
