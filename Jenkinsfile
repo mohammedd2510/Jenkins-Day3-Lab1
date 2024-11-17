@@ -14,7 +14,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 echo 'Building Docker image...'
-                sh 'sudo chmod 666 /var/run/docker.sock'
+                sh 'echo "<your_password>" | sudo -S chmod 666 /var/run/docker.sock'
                 sh 'docker build -t $DOCKER_IMAGE .'
             }
         }
