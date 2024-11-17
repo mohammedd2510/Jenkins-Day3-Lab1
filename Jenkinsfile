@@ -1,7 +1,7 @@
 pipeline {
     agent { label 'docker' } // Specify the agent label
     environment {
-        DOCKER_IMAGE = 'mosama25/jenkins_day3_lab1:v2.0'
+        DOCKER_IMAGE = 'mosama25/jenkins_day3_lab1:v3.0'
         DOCKER_LOGIN_CREDS = credentials('docker_credentials')// Replace with your Jenkins credentials ID
     }
     stages {
